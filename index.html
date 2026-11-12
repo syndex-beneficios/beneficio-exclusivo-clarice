@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benefício Exclusivo · Clarice</title>
+<meta name="description" content="Uma carta especial da Syndex para a Clarice Eletrodomésticos.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Benefício Exclusivo · Clarice">
+<meta property="og:description" content="Jhenni, uma carta especial da Syndex para a Clarice Eletrodomésticos.">
+<meta property="og:image" content="https://tomsoares10-dev.github.io/beneficio-exclusivo-clarice/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://tomsoares10-dev.github.io/beneficio-exclusivo-clarice/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #f4f8fe; }
+  body { font-family: 'Inter', sans-serif; color: #18233f; -webkit-tap-highlight-color: transparent; }
+
+  .viewport { position: fixed; inset: 0; display: grid; place-items: center;
+    background:
+      radial-gradient(70vw 50vh at 0% 0%, rgba(126,220,245,.45), rgba(126,220,245,0) 70%),
+      radial-gradient(70vw 50vh at 100% 100%, rgba(110,140,232,.40), rgba(110,140,232,0) 70%), #f7fbff; }
+  .stage { position: absolute; left: 50%; top: 50%; width: 1080px; height: 1920px; overflow: hidden;
+    transform-origin: 0 0;
+    background:
+      radial-gradient(1000px 760px at -10% -6%, rgba(126,220,245,.55), rgba(126,220,245,0) 70%),
+      radial-gradient(900px 700px at 110% 104%, rgba(110,140,232,.50), rgba(110,140,232,0) 70%),
+      radial-gradient(700px 520px at 100% 55%, rgba(196,200,248,.32), rgba(196,200,248,0) 70%),
+      radial-gradient(600px 460px at 0% 88%, rgba(170,225,245,.35), rgba(170,225,245,0) 70%),
+      #fbfdff; }
+  .abs { position: absolute; }
+  .center-x { left: 0; right: 0; text-align: center; }
+  .arcs { position: absolute; inset: 0; pointer-events: none; }
+
+  /* ---------- topo: Syndex × Clarice ---------- */
+  .cobrand { top: 150px; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 26px; }
+  .cobrand .lg-s { height: 88px; }
+  .cobrand .x { font: 300 40px/1 'Poppins', sans-serif; color: #8a98b8; }
+  .cobrand .lg-c { height: 72px; border-radius: 14px; box-shadow: 0 10px 22px -12px rgba(207,23,31,.6); }
+
+  /* ---------- envelope ---------- */
+  .para { top: 480px; }
+  .para small { display: block; font: 600 20px/1 'Poppins', sans-serif; letter-spacing: 6px; color: #3f8f3e; }
+  .para b { display: block; margin-top: 16px; font: 600 50px/1.15 'Poppins', sans-serif; color: #1b3f8c; }
+  .para span { display: block; margin-top: 8px; font: 300 italic 32px/1.2 'Poppins', sans-serif; color: #4a5f8a; }
+
+  .env { left: 150px; top: 870px; width: 780px; height: 500px; perspective: 1800px; }
+  .env-b { z-index: 1; } .env-f { z-index: 3; }
+  .env { pointer-events: none; } .waiting .env { pointer-events: auto; }
+  .replay { z-index: 8; }
+  .env-back, .env-front, .env-flap { position: absolute; inset: 0; border-radius: 26px; }
+  .env-back { background: linear-gradient(160deg, #163a82, #0f2a5e); box-shadow: 0 40px 70px -30px rgba(15,42,94,.6); }
+  .env-front { border-radius: 26px;
+    background: linear-gradient(170deg, #2456b3 0%, #1b3f8c 55%, #14326f 100%);
+    clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%); }
+  .env-front::after { content: ""; position: absolute; inset: 0; border-radius: 26px;
+    background: radial-gradient(420px 260px at 85% 100%, rgba(124,199,123,.25), rgba(124,199,123,0) 70%); }
+  .env-flap { transform-origin: 50% 0; backface-visibility: visible;
+    background: linear-gradient(180deg, #2a5dbd, #1b3f8c);
+    clip-path: polygon(0 0, 100% 0, 50% 66%); }
+  .env-seal { position: absolute; z-index: 5; left: 50%; top: 66%; width: 132px; height: 132px; margin: -84px 0 0 -66px;
+    border-radius: 50%; display: grid; place-items: center;
+    background: radial-gradient(circle at 32% 28%, #a4e3a3, #5fb35e 55%, #3f8f3e);
+    box-shadow: 0 14px 26px -10px rgba(20,60,20,.55), inset 0 0 0 6px rgba(255,255,255,.28); }
+  .env-seal img { width: 58px; }
+  .hint { top: 1440px; font: 600 26px/1 'Poppins', sans-serif; letter-spacing: 3px; color: #1b3f8c; opacity: 0; }
+  .waiting .hint { opacity: 1; animation: pulse 1.6s ease-in-out infinite; }
+  .waiting .env { cursor: pointer; }
+  @keyframes pulse { 0%,100% { opacity: .35; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-6px); } }
+
+  /* ---------- cabeçalho do benefício ---------- */
+  .eyebrow { top: 380px; font: 600 21px/1 'Poppins', sans-serif; letter-spacing: 6px; color: #3f8f3e; }
+  .title { top: 424px; font: 600 72px/1.05 'Poppins', sans-serif; color: #1b3f8c; letter-spacing: -1.5px; white-space: nowrap; }
+  .sub { top: 522px; font: 300 italic 34px/1.2 'Poppins', sans-serif; color: #4a5f8a; }
+  .intro { top: 604px; left: 90px; right: 90px; text-align: center; font: 400 31px/1.5 'Inter', sans-serif; color: #26324f; }
+  .intro b { font-weight: 600; color: #1b3f8c; }
+
+  /* ---------- cartão ---------- */
+  .card { left: 64px; top: 790px; width: 952px; height: 586px; z-index: 2; border-radius: 40px; color: #fff;
+    border: 3px solid transparent;
+    background:
+      radial-gradient(480px 300px at 92% 0%, rgba(124,199,123,.30), rgba(124,199,123,0) 70%) padding-box,
+      radial-gradient(560px 340px at 0% 110%, rgba(126,220,245,.22), rgba(126,220,245,0) 70%) padding-box,
+      linear-gradient(135deg, #1f4aa0 0%, #1b3f8c 45%, #12306d 100%) padding-box,
+      linear-gradient(135deg, #7cc77b 0%, #5fb7e8 50%, #8fb0f2 100%) border-box;
+    box-shadow: 0 34px 70px -30px rgba(18,48,109,.65); }
+  .card .flash { position: absolute; inset: 0; border-radius: 38px; pointer-events: none; opacity: 0;
+    background: radial-gradient(520px 260px at 40% 34%, rgba(155,224,154,.55), rgba(155,224,154,0) 70%); }
+  .lblrow { position: absolute; left: 64px; right: 64px; top: 66px; height: 24px; }
+  .lbl { position: absolute; left: 0; top: 0; font: 600 21px/1 'Poppins', sans-serif; letter-spacing: 4px; }
+  .lbl.hoje { color: rgba(255,255,255,.65); }
+  .lbl.novo { color: #9be09a; opacity: 0; }
+  .ref { position: absolute; left: 380px; top: -4px; font: 500 28px/1 'Poppins', sans-serif; color: rgba(255,255,255,.55); opacity: 0; }
+  .ref::after { content: ""; position: absolute; left: -4px; right: -4px; top: 52%; height: 2.5px; background: rgba(255,255,255,.75); transform: rotate(-6deg); border-radius: 2px; }
+  .big { position: absolute; left: 64px; top: 116px; font: 700 128px/1 'Poppins', sans-serif; letter-spacing: -3px; white-space: nowrap; display: flex; align-items: flex-start; }
+  .big .tail { display: inline-flex; }
+  .roll { display: inline-block; height: 1em; overflow: hidden; vertical-align: top; }
+  .roll .col { display: flex; flex-direction: column; }
+  .roll .col span { display: block; height: 1em; line-height: 1; }
+  .tag { position: absolute; left: 64px; top: 278px; display: inline-flex; align-items: center; gap: 12px; opacity: 0;
+    font: 600 24px/1 'Poppins', sans-serif; color: #c4f0c3; background: rgba(124,199,123,.16);
+    border: 1.5px solid rgba(155,224,154,.55); border-radius: 999px; padding: 14px 24px 13px 18px; }
+  .divider { position: absolute; left: 64px; right: 64px; top: 372px; height: 1px; background: rgba(255,255,255,.2); transform-origin: 0 50%; transform: scaleX(0); }
+  .cond { position: absolute; left: 64px; right: 64px; top: 404px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; opacity: 0; }
+  .chips { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .chip { font: 500 24px/1 'Poppins', sans-serif; padding: 17px 24px 16px; border-radius: 999px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.28); }
+  .plus { font: 500 28px/1 'Poppins', sans-serif; color: #9be09a; }
+  .cond p { font: 400 26px/1.42 'Inter', sans-serif; color: rgba(255,255,255,.9); }
+  .cond p b { color: #fff; font-weight: 600; }
+
+  .seal { left: 846px; top: 696px; width: 196px; height: 196px; z-index: 6; opacity: 0; filter: drop-shadow(0 16px 26px rgba(18,48,109,.35)); }
+  .ripple { left: 846px; top: 696px; width: 196px; height: 196px; z-index: 5; border-radius: 50%; border: 4px solid rgba(124,199,123,.7); opacity: 0; }
+
+  /* ---------- fechamento ---------- */
+  .thanks { top: 1500px; font: 300 italic 40px/1.3 'Poppins', sans-serif; color: #1b3f8c; }
+  .sign { top: 1590px; }
+  .sign .bar { width: 80px; height: 4px; margin: 0 auto; border-radius: 4px; background: linear-gradient(90deg, #7cc77b, #1b3f8c); }
+  .sign .name { margin-top: 22px; font: 600 44px/1 'Poppins', sans-serif; color: #1b3f8c; }
+  .sign .role { margin-top: 12px; font: 400 24px/1.3 'Inter', sans-serif; color: #4a5f8a; }
+  .fim { top: 1748px; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 24px; }
+  .fim::before, .fim::after { content: ""; width: 130px; height: 2px; }
+  .fim::before { background: linear-gradient(90deg, rgba(124,199,123,0), #7cc77b); }
+  .fim::after { background: linear-gradient(90deg, #5fb7e8, rgba(27,63,140,0)); }
+  .fim span { font: 600 40px/1 'Poppins', sans-serif; color: #1b3f8c; letter-spacing: -.4px; }
+  .fim span i { font-style: normal; color: #7cc77b; }
+  .replay { top: 1816px; left: 50%; margin-left: -150px; width: 300px; height: 76px; border-radius: 999px; border: 1.5px solid rgba(27,63,140,.35);
+    background: rgba(255,255,255,.7); font: 600 24px/1 'Poppins', sans-serif; color: #1b3f8c; letter-spacing: 1px; opacity: 0; pointer-events: none; cursor: pointer; }
+  .done .replay { pointer-events: auto; }
+  .video .replay, .video .hint { display: none; }
+  .footbar { left: 0; right: 0; bottom: 0; height: 16px; background: linear-gradient(90deg, #7cc77b 0%, #3f8fd0 45%, #1b3f8c 100%); }
+
+  /* ================= LINHA DO TEMPO (ms) =================
+     0      topo + "Para" + envelope entram
+     1400   pausa (no link) até tocar
+     1500   lacre sai · 1850 aba abre · 2450 cartão sobe
+     3050   envelope desce · 3150 cartão assenta
+     3400   título / texto · 4700 3 → 2 · 5600 selo
+     6600   condição · 7600 agradecimento · 8000 assinatura
+  ========================================================== */
+  .a { animation-fill-mode: both; animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  .cobrand { animation: fadeDown 800ms 100ms both cubic-bezier(.2,.7,.2,1); }
+  .para { animation: fadeUp 800ms 350ms both cubic-bezier(.2,.7,.2,1), fadeOut 400ms 1750ms forwards ease; }
+  .env { animation: envIn 1000ms 300ms both cubic-bezier(.2,.9,.25,1.15), envOut 700ms 3050ms forwards cubic-bezier(.5,0,.75,0); }
+  .flap-f { animation: flapOpen 700ms 1850ms forwards cubic-bezier(.45,0,.2,1), visFront 700ms 1850ms forwards linear; }
+  .flap-b { animation: flapOpen 700ms 1850ms forwards cubic-bezier(.45,0,.2,1), visBack 700ms 1850ms both linear; }
+  .env-seal { animation: sealOff 450ms 1500ms forwards cubic-bezier(.3,0,.2,1); }
+  .card { animation: cardShow 10ms 1350ms both, cardOut 1500ms 2350ms both cubic-bezier(.3,.8,.25,1); }
+  .eyebrow { animation: fadeUp 700ms 3350ms both cubic-bezier(.2,.7,.2,1); }
+  .title { animation: fadeUp 800ms 3450ms both cubic-bezier(.2,.7,.2,1); }
+  .sub { animation: fadeUp 800ms 3600ms both cubic-bezier(.2,.7,.2,1); }
+  .intro { animation: fadeUp 800ms 3800ms both cubic-bezier(.2,.7,.2,1); }
+  .roll .col { animation: rollDown 650ms 4700ms both cubic-bezier(.6,-0.35,.3,1.35); }
+  .big .green { animation: toGreen 400ms 4900ms both ease; }
+  .lbl.hoje { animation: fadeOut 300ms 4650ms forwards ease; }
+  .lbl.novo { animation: fadeIn 400ms 4950ms forwards ease; }
+  .ref { animation: fadeIn 500ms 5200ms forwards ease; }
+  .card .flash { animation: flash 900ms 4850ms both ease-out; }
+  .lblrow, .big { animation: cardShow 250ms 2400ms both ease; }
+  .tag { animation: popIn 500ms 5250ms both cubic-bezier(.2,1.4,.4,1); }
+  .seal { animation: stamp 520ms 5650ms both cubic-bezier(.5,0,.6,1.3); }
+  .ripple { animation: ripple 800ms 6080ms both ease-out; }
+  .shake { z-index: 2; animation: shake 360ms 6100ms both ease-out, toFront 10ms 3000ms both; }
+  .seal, .ripple { z-index: 7; }
+  .divider { animation: grow 600ms 6550ms forwards cubic-bezier(.2,.7,.2,1); }
+  .cond { animation: fadeUp 700ms 6700ms both cubic-bezier(.2,.7,.2,1); }
+  .thanks { animation: fadeUp 800ms 7600ms both cubic-bezier(.2,.7,.2,1); }
+  .sign { animation: fadeUp 800ms 8000ms both cubic-bezier(.2,.7,.2,1); }
+  .fim { animation: fadeUp 800ms 8500ms both cubic-bezier(.2,.7,.2,1); }
+  .replay { animation: fadeIn 600ms 9300ms both ease; }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: none; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+  @keyframes envIn { from { opacity: 0; transform: translateY(260px) scale(.92); } to { opacity: 1; transform: none; } }
+  @keyframes envOut { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(620px) rotate(4deg); } }
+  @keyframes sealOff { 0% { transform: scale(1); opacity: 1; } 35% { transform: scale(1.18); opacity: 1; } 100% { transform: scale(.2) translateY(-40px); opacity: 0; } }
+  @keyframes flapOpen { from { transform: rotateX(0); } to { transform: rotateX(178deg); filter: brightness(.82); } }
+  @keyframes visFront { 0%, 49.9% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  @keyframes visBack { 0%, 49.9% { opacity: 0; } 50%, 100% { opacity: 1; } }
+  @keyframes cardShow { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes toFront { from { z-index: 2; } to { z-index: 5; } }
+  /* cartão: dentro do envelope (pequeno, abaixo) → sobe → assenta no lugar final */
+  @keyframes cardOut {
+    0%   { transform: translateY(40px) scale(.78); }
+    45%  { transform: translateY(-470px) scale(.8); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  @keyframes rollDown { from { transform: translateY(0); } to { transform: translateY(-1em); } }
+  @keyframes toGreen { from { color: #ffffff; } to { color: #9be09a; } }
+  @keyframes flash { 0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes popIn { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+  @keyframes stamp { 0% { opacity: 0; transform: scale(2.6) rotate(-38deg); } 70% { opacity: 1; transform: scale(.92) rotate(-8deg); } 100% { opacity: 1; transform: scale(1) rotate(-10deg); } }
+  @keyframes ripple { 0% { opacity: 0; transform: scale(.9); } 12% { opacity: .9; } 100% { opacity: 0; transform: scale(1.7); } }
+  @keyframes shake { 0% { transform: translate(0,0); } 25% { transform: translate(-5px,4px); } 50% { transform: translate(4px,-3px); } 75% { transform: translate(-2px,2px); } 100% { transform: translate(0,0); } }
+  @keyframes grow { to { transform: scaleX(1); } }
+  @keyframes clock { from { opacity: 0; } to { opacity: 0; } }
+  #clock { animation: clock 60000ms linear both; }
+
+  @media (prefers-reduced-motion: reduce) { .stage * { animation-duration: 1ms !important; animation-delay: 0ms !important; } }
+</style>
+</head>
+<body>
+<div class="viewport">
+<div class="stage" id="stage">
+  <svg class="arcs" viewBox="0 0 1080 1920" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#5fd3f0" stop-opacity="0"/><stop offset=".5" stop-color="#5fd3f0" stop-opacity=".75"/><stop offset="1" stop-color="#8f9cf0" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="M -60 120 C 40 50, 170 0, 340 -50" fill="none" stroke="url(#g1)" stroke-width="2"/>
+    <path d="M -60 60 C 20 20, 110 -10, 240 -50" fill="none" stroke="url(#g1)" stroke-width="1" opacity=".6"/>
+    <path d="M 600 1960 C 760 1760, 930 1640, 1120 1560" fill="none" stroke="#ffffff" stroke-width="2" opacity=".8"/>
+    <path d="M 520 1960 C 700 1730, 900 1590, 1120 1500" fill="none" stroke="#8fb0f2" stroke-width="1.2" opacity=".45"/>
+  </svg>
+
+  <div class="abs cobrand">
+    <img class="lg-s" src="logo_syndex.png" alt="Syndex">
+    <span class="x">×</span>
+    <img class="lg-c" src="clarice.png" alt="Clarice">
+  </div>
+
+  <!-- abertura -->
+  <div class="abs center-x para">
+    <small>PARA</small>
+    <b>Jhenni</b>
+    <span>Clarice Eletrodomésticos</span>
+  </div>
+
+  <!-- benefício -->
+  <div class="abs center-x eyebrow">CONDIÇÃO ESPECIAL DE CÂMBIO</div>
+  <div class="abs center-x title">Clarice Eletrodomésticos</div>
+  <div class="abs center-x sub">Um benefício exclusivo da nossa parceria</div>
+  <p class="abs intro">Jhenni, consegui junto à nossa Diretoria uma <b>condição exclusiva para a Clarice Eletrodomésticos</b>.</p>
+
+  <!-- envelope: fundo (atrás do cartão) -->
+  <div class="abs env env-b">
+    <div class="env-back"></div>
+    <div class="env-flap flap-b"></div>
+  </div>
+
+  <div class="abs shake" style="left:0;top:0;width:1080px;height:1920px;pointer-events:none;">
+    <div class="abs card" id="card">
+      <div class="flash"></div>
+      <div class="lblrow">
+        <div class="lbl hoje">HOJE</div>
+        <div class="lbl novo">COM O BENEFÍCIO</div>
+        <div class="ref">PTAX + 3,5%</div>
+      </div>
+      <div class="big">PTAX +&nbsp;<span class="tail green"><span class="roll"><span class="col"><span>3</span><span>2</span></span></span>,5%</span></div>
+      <div class="tag"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#9be09a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>1 ponto percentual a menos</div>
+      <div class="divider"></div>
+      <div class="cond">
+        <div class="chips"><div class="chip">Frete</div><div class="plus">+</div><div class="chip">Desembaraço</div></div>
+        <p>Vale para os processos em que o <b>frete e o desembaraço aduaneiro</b> forem fechados juntos com a Syndex.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="abs ripple"></div>
+  <svg class="abs seal" viewBox="0 0 142 142" aria-label="Aprovado pela Diretoria Syndex">
+    <defs>
+      <linearGradient id="sealring" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7cc77b"/><stop offset=".55" stop-color="#3f7fd0"/><stop offset="1" stop-color="#1b3f8c"/>
+      </linearGradient>
+      <path id="sealtext" d="M 71 71 m -51 0 a 51 51 0 1 1 102 0 a 51 51 0 1 1 -102 0"/>
+    </defs>
+    <circle cx="71" cy="71" r="69" fill="#ffffff"/>
+    <circle cx="71" cy="71" r="66" fill="none" stroke="url(#sealring)" stroke-width="4"/>
+    <circle cx="71" cy="71" r="38" fill="none" stroke="#d3ddef" stroke-width="1.2" stroke-dasharray="2 4"/>
+    <text font-family="Poppins, sans-serif" font-weight="600" font-size="11.6" letter-spacing="1.6" fill="#1b3f8c">
+      <textPath href="#sealtext" startOffset="0" textLength="316" lengthAdjust="spacing">APROVADO PELA DIRETORIA • SYNDEX •</textPath>
+    </text>
+    <circle cx="71" cy="71" r="30" fill="#5fb35e"/>
+    <path d="M 58 72 L 67 81 L 85 62" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+
+  <!-- envelope: frente (por cima do cartão até ele sair) -->
+  <div class="abs env env-f" id="env">
+    <div class="env-front"></div>
+    <div class="env-flap flap-f"></div>
+    <div class="env-seal"><img src="syndex_s.png" alt=""></div>
+  </div>
+  <div class="abs center-x hint">TOQUE PARA ABRIR</div>
+
+  <div class="abs center-x thanks">Obrigado pela parceria. Conte sempre comigo.</div>
+  <div class="abs center-x sign">
+    <div class="bar"></div>
+    <div class="name">Tomás</div>
+    <div class="role">Especialista Comercial · Syndex Logística e Gestão Aduaneira</div>
+  </div>
+  <div class="abs fim"><span>Conte com a Syndex<i>.</i></span></div>
+  <button class="abs replay" id="replay">↺&nbsp; Ver de novo</button>
+  <div class="abs footbar"></div>
+  <div id="clock" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;"></div>
+</div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var isVideo = location.hash === '#video';
+  if (isVideo) stage.classList.add('video');
+
+  function fit() {
+    var s = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+    stage.style.transform = 'scale(' + s + ') translate(-50%, -50%)';
+  }
+  fit(); window.addEventListener('resize', fit);
+
+  var PAUSE_AT = 1400, END_AT = 9900;
+  function timeline() {
+    return document.getAnimations().filter(function (a) {
+      return a.animationName !== 'pulse' && stage.contains(a.effect && a.effect.target);
+    });
+  }
+  function clockAnim() {
+    return document.getElementById('clock').getAnimations()[0];
+  }
+  function setAll(t, play) {
+    timeline().forEach(function (a) { a.currentTime = t; play ? a.play() : a.pause(); });
+  }
+  // usado pela gravação do vídeo: posiciona tudo num instante exato
+  window.__seek = function (t) { setAll(t, false); };
+
+  if (isVideo) { setAll(0, false); return; }
+
+  var waiting = false, opened = false;
+  function watch() {
+    var ref = clockAnim();
+    if (!opened && ref && ref.currentTime >= PAUSE_AT) {
+      setAll(PAUSE_AT, false); waiting = true; stage.classList.add('waiting'); return;
+    }
+    if (opened && ref && ref.currentTime >= END_AT) { stage.classList.add('done'); return; }
+    requestAnimationFrame(watch);
+  }
+  requestAnimationFrame(watch);
+
+  function open() {
+    if (!waiting) return;
+    waiting = false; opened = true; stage.classList.remove('waiting');
+    timeline().forEach(function (a) { a.play(); });
+    requestAnimationFrame(watch);
+  }
+  document.getElementById('env').addEventListener('click', open);
+  stage.addEventListener('click', function (e) { if (waiting && e.target.id !== 'replay') open(); });
+
+  document.getElementById('replay').addEventListener('click', function (e) {
+    e.stopPropagation(); stage.classList.remove('done');
+    opened = true; setAll(0, true); requestAnimationFrame(watch);
+  });
+})();
+</script>
+</body>
+</html>
